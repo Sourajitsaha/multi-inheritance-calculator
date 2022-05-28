@@ -1,0 +1,68 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Io
+{
+private int a;
+private int b;
+public void setValue(int x,int y)
+{
+    a=x;
+    b=y;
+}
+public int getValue()
+{
+    return a;
+}
+public int getValu()
+{
+    return b;
+}
+}
+class Addition extends Io
+{
+    public int add()
+    {
+        return(super.getValue()+super.getValu());
+    }
+}
+class Subtraction extends Addition
+{
+    public int dif()
+    {
+        return(super.getValue()-super.getValu());
+    }
+}
+class Multiplication  extends Subtraction
+{
+    public int prod()
+    {
+        return(super.getValue()*super.getValu());
+    }
+}
+class Division extends Multiplication
+{
+    public int div()
+    {
+        return(super.getValue()/super.getValu());
+    }
+}
+class Codechef
+{
+	public static void main (String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number");
+		Division a1=new Division();
+		int n=sc.nextInt();
+		int y=sc.nextInt();
+		a1.setValue(n,y);
+		System.out.println("The addition of two numbers: "+a1.add());
+		System.out.println("The difference of two numbers: "+a1.dif());
+		System.out.println("The product of two numbers: "+a1.prod());
+		System.out.println("The division of two numbers: "+a1.div());
+	}
+}
